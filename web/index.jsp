@@ -10,10 +10,12 @@
     <center>
          <div style="margin-top: 30px;">
                 <form action="ControladorLogin" method="post">
+                            <label for="user">Usuario: </label>
                             <input id="user" type="text" name="usuario" value="" required="">
-                            <label for="user">Usuario</label>
+                            <br><br>
+                            <label for="password">Password: </label>
                             <input id="password" type="password" input name="clave" value="" required="">
-                            <label for="password">Password</label>
+                            <br><br>
                     <button type="submit" value="Aceptar" name="opcion" >Enviar
                     </button>
                     <button type="reset">Cancelar</button>

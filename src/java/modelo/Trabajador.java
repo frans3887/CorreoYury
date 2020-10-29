@@ -17,7 +17,7 @@ public class Trabajador {
     private String sexo;  
     private String direccion;
     private int telefono;
-    private String cargo;
+    private String carga;
     private String fechaIngreso;
     private String departamento;
     private String area;
@@ -57,12 +57,12 @@ public class Trabajador {
       
     }
     
-    public Usuario(String rut, String nombre, String apellidoPaterno, String apellidoMaterno, String sexo, String direccion, int telefono, String fechaIngreso, String departamento, String area, String contactoEmergencia, String relacion, int telefonoEmergencia, String rutCarga, String nombreCarga, String apellidoPaternoCarga, String apellidoMaternoCarga, String parentezco, String sexoCarga) {
+    public Trabajador(String rut, String nombre, String apellidoPaterno, String apellidoMaterno, String sexo, String direccion, int telefono, String fechaIngreso, String departamento, String area, String contactoEmergencia, String relacion, int telefonoEmergencia, String rutCarga, String nombreCarga, String apellidoPaternoCarga, String apellidoMaternoCarga, String parentezco, String sexoCarga) {
         this.rut = rut;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
-        this.sexo = sexo
+        this.sexo = sexo;
 	this.direccion = direccion;
 	this.telefono = telefono;
 	this.fechaIngreso = fechaIngreso;
@@ -113,7 +113,7 @@ public class Trabajador {
     }
 
     public String getSexo() {
-        return sexo
+        return sexo;
     }
 
     public void setSexo (String sexo) {
@@ -121,7 +121,7 @@ public class Trabajador {
     }
     
     public String getDireccion () {
-	return direccion
+	return direccion;
     }
 
     public void setDireccion(String direccion) {
@@ -129,81 +129,81 @@ public class Trabajador {
     }
 
     public int getTelefono () {
-	return telefono
+	return telefono;
     }
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
     public String getFechaIngreso (){
-	return fechaIngreso
+	return fechaIngreso;
    }
     public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
     public String getDepartamento () {
-	return departamento
+	return departamento;
    }
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
 
     public String getArea () {
-	return area
+	return area;
    }
     public void setArea (String area) {
         this.area = area;
     }
     public String getContactoEmergencia () {
-	return contactoEmergencia
+	return contactoEmergencia;
    }
     public void setContactoEmergencia (String contactoEmergencia) {
         this.contactoEmergencia = contactoEmergencia;
     }
     public String getRelacion () {
-	return relacion
+	return relacion;
    }
     public void setRelacion (String relacion) {
         this.relacion = relacion;
     }
     public int getTelefonoEmergencia () {
-	return telefonoEmergencia
+	return telefonoEmergencia;
    }
     public void setTelefonoEmergencia (int telefonoEmergencia) {
         this.telefonoEmergencia = telefonoEmergencia;
     }
     public String rutCarga (){
- 	return carga
+ 	return carga;
    }
     public void setRutCarga(String rutCarga) {
         this.rutCarga = rutCarga;
     }
     public String getNombreCarga (){
-	return nombreCarga
+	return nombreCarga;
    }
     public void setNombreCarga(String nombreCarga) {
         this.nombreCarga = nombreCarga;
     }
     public String getApellidoPaternoCarga () {
-	return apellidoPaternoCarga
+	return apellidoPaternoCarga;
   }
     public void setApellidoPaternoCarga (String apellidoPaternoCarga) {
         this.apellidoPaternoCarga= apellidoPaternoCarga;
     }
     public String getApellidoMaternoCarga (){
-	return apellidoMaternoCarga
+	return apellidoMaternoCarga;
   }
     public void setApellidoMaternoCarga (String apellidoMaternoCarga) {
         this.apellidoMaternoCarga = apellidoMaternoCarga;
     }
     public String getParentezco (){
-	return parentezco
+	return parentezco;
   }
     public void setParentezco(String parentezco) {
         this.parentezco = parentezco;
     }
     public String getSexoCarga (){
-	return sexoCarga
+	return sexoCarga;
   }
     public void setSexoCarga (String sexoCarga) {
         this.sexoCarga = sexoCarga;

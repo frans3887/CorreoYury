@@ -40,18 +40,18 @@ public class TrabajadorDAO
     {
         boolean estado=false;
              conectar();
-             state.executeUpdate("INSERT INTO trabajador VALUES('"+trabajador.getId()+
+             /*state.executeUpdate("INSERT INTO trabajador VALUES('"+trabajador.getId()+
                      "','"+trabajador.getRut()+"','"+trabajador.getNombre()+"','"+trabajador.getApellidoPaterno()+"','"
                      +trabajador.getApellidoMaterno()+"','"+trabajador.getSexo()+
                      "','"+trabajador.getDireccion()+"','"+trabajador.getTelefono()+"','"
                      +trabajador.getCargo()+"' , '"+trabajador.getFechaIngreso()+"','"+trabajador.getDepartamento()+"', '"+trabajador.getArea()+"', '"+trabajador.getContactoEmergencia()+"' , '"+trabajador.getRelacion()+"' ,
 			'"+trabajador.getTelefonoEmergencia()+"', '"+trabajador.getRutCarga()+"', '"+trabajador.getNombreCarga()+"', '"+trabajador.getApellidoPaternoCarga()+"', '"+trabajador.getApellidoPaternoCarga()+"'  
-, '"+trabajador.getApellidoMaternoCarga()+"', '"+trabajador.getParentezco()+"' , "+trabajador.getSexoCarga()+");");
+, '"+trabajador.getApellidoMaternoCarga()+"', '"+trabajador.getParentezco()+"' , "+trabajador.getSexoCarga()+");");*/
              connect.close();
              estado = true;
         return estado;
     }
-    
+    /*
     public static ArrayList<Trabajador> getArreglo(ResultSet result) throws SQLException
     {
         ArrayList<Trabajador> arreglo = new ArrayList();
@@ -83,13 +83,13 @@ public class TrabajadorDAO
         }
         return arreglo;
     }
-    
+    */
     public static ArrayList<Trabajador> obtenerDatos() throws SQLException
     {
         ArrayList<Trabajador> alTrabajadores = new ArrayList();
         conectar();
         ResultSet result = state.executeQuery("SELECT * FROM trabajador;");
-        alTrabajadores = getArreglo(result);
+        //alTrabajadores = getArreglo(result);
         connect.close();
         return alTrabajadores;
     }
