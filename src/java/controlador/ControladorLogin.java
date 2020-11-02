@@ -69,10 +69,10 @@ public class ControladorLogin extends HttpServlet {
                     response.sendRedirect("menuAdmin.jsp");
                     break;
                 case 2:
-                    response.sendRedirect("menuTrabajador.jsp");
+                    response.sendRedirect("menuRRHH.jsp");
                     break;
                 case 3:
-                    response.sendRedirect("menuRRHH.jsp");
+                    response.sendRedirect("menuTrabajador.jsp");
                     break;
                 default:
                     response.sendRedirect("MensajeError.jsp?mensaje=Error, usuario o clave incorrectos&retorno=index.jsp");

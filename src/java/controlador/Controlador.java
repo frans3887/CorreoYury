@@ -5,12 +5,17 @@
  */
 package controlador;
 
+import dao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Usuario;
 
 /**
  *
@@ -28,8 +33,83 @@ public class Controlador extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
+            
         response.setContentType("text/html;charset=UTF-8");
+        String rut = "";
+        String nombre = "";
+        String apellidoPaterno="";
+        String apellidoMaterno="";
+        int tipoUsuario=0;
+        String cargo="";
+        String username="";
+        String password="";
+        int estado=0;
+        String opcion=request.getParameter("opcion");
+        if (opcion.equals("Grabar")) 
+        {
+            rut=request.getParameter("rut");
+            nombre=request.getParameter("nombre");
+            apellidoPaterno=request.getParameter("apellidoPaterno");
+            apellidoMaterno=request.getParameter("apellidoMaterno");
+            password=request.getParameter("password");
+            switch (request.getParameter("tipoUsuario")) 
+            {
+                case "administrador":
+                    tipoUsuario=1;
+                    cargo="Administrador";
+                    break;
+                case "rrhh":
+                    tipoUsuario=2;
+                    cargo="Recursos Humanos";
+                    break;
+                case "trabajador":
+                    tipoUsuario=3;
+                    switch (request.getParameter("cargo")) 
+                    {
+                        case "cargo1":
+                            cargo="Cargo tipo 1";
+                            break;
+                        case "cargo2":
+                            cargo="Cargo tipo 2";
+                            break;
+                        case "cargo3":
+                            cargo="Cargo tipo 3";
+                            break;
+                        case "cargo4":
+                            cargo="Cargo tipo 4";
+                            break;
+                        case "cargo5":
+                            cargo="Cargo tipo 5";
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            //boolean prueba = UsuarioDAO.revisionRut(rut);
+            /*if(!prueba)
+            {
+                //response.sendRedirect("MensajeError.jsp?mensaje=Rut ya existente&retorno=Grabar.jsp");
+            }*/
+            username = UsuarioDAO.revisionUsuario(nombre, apellidoPaterno);
+                //response.sendRedirect("MensajeOk.jsp?mensaje=Usuario agregado<br>Su username es: &username="+rut+" "+nombre+" "+username+" "+apellidoPaterno+" "+apellidoMaterno+" "+password);
+                
+            Usuario usuario=new Usuario(rut, nombre, apellidoPaterno, apellidoMaterno, tipoUsuario, cargo, username, password, estado);
+            
+            if(UsuarioDAO.agregar(usuario) == true)
+            {
+            //bien
+                response.sendRedirect("MensajeOk.jsp?mensaje=Usuario agregado<br>Su username es: &username="+username);
+
+                  
+            }else{
+                 //error
+                response.sendRedirect("MensajeError.jsp?mensaje=Rut ya existente&retorno=");
+            }
+        }    
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -43,7 +123,6 @@ public class Controlador extends HttpServlet {
             out.println("</html>");
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -56,7 +135,11 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -70,7 +153,11 @@ public class Controlador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Controlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

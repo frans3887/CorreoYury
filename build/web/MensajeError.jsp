@@ -27,7 +27,18 @@
         <h3> <%=mensaje%></h3>
 
         <br><br><br>
+        <%if (retorno != ""){
+        %>
         <a href="<%=retorno%>"><button>Volver</button></a>
+        <%
+        }
+        else
+        {
+        %>
+            <button type="button" name="back" onclick="history.back()">Volver</button>
+        <%
+        }
+        %>
     </center>
     </body>
 </html>

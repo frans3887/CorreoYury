@@ -15,7 +15,7 @@
         
         <%
             
-               HttpSession sesion = request.getSession(true);  //área en la RAM
+               HttpSession sesion = request.getSession(true);
         
                 sesion.setAttribute("usuario", null);
                 sesion.setAttribute("estadoSesion", "off");

@@ -14,7 +14,8 @@ public class Usuario {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
-    private int tipoUsuario;  //1 admin, 2 trabajador, 0 error
+    private int tipoUsuario;  //1 admin, 2 RRHH, 3 trabajador, 0 error
+    private String cargo;
     private String username;
     private String password;
     private int estado;  //1 activo, 0 inactivo, 3 eliminado...etc
@@ -26,17 +27,19 @@ public class Usuario {
         apellidoPaterno = null;
         apellidoMaterno = null;
         tipoUsuario = 0;
+        cargo = null;
         username = null;
         password = null;
         estado = 0;
     }
     
-    public Usuario(String rut, String nombre, String apellidoPaterno, String apellidoMaterno, int tipoUsuario, String username, String password, int estado) {
+    public Usuario(String rut, String nombre, String apellidoPaterno, String apellidoMaterno, int tipoUsuario, String cargo, String username, String password, int estado) {
         this.rut = rut;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.tipoUsuario = tipoUsuario;
+        this.cargo = cargo;
         this.username = username;
         this.password = password;
         this.estado = estado;
@@ -82,6 +85,14 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -105,6 +116,4 @@ public class Usuario {
     public void setEstado(int estado) {
         this.estado = estado;
     }
-
-    
 }
