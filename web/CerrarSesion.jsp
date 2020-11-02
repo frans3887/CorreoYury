@@ -1,9 +1,3 @@
-<%-- 
-    Document   : CerrarSession
-    Created on : 28-10-2020, 19:16:46
-    Author     : fran
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

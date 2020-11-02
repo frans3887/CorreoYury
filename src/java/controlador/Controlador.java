@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controlador;
 
 import dao.UsuarioDAO;
@@ -17,21 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Usuario;
 
-/**
- *
- * @author Carlo
- */
-public class Controlador extends HttpServlet {
+public class Controlador extends HttpServlet 
+{
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
             
@@ -89,13 +72,7 @@ public class Controlador extends HttpServlet {
                 default:
                     break;
             }
-            //boolean prueba = UsuarioDAO.revisionRut(rut);
-            /*if(!prueba)
-            {
-                //response.sendRedirect("MensajeError.jsp?mensaje=Rut ya existente&retorno=Grabar.jsp");
-            }*/
             username = UsuarioDAO.revisionUsuario(nombre, apellidoPaterno);
-                //response.sendRedirect("MensajeOk.jsp?mensaje=Usuario agregado<br>Su username es: &username="+rut+" "+nombre+" "+username+" "+apellidoPaterno+" "+apellidoMaterno+" "+password);
                 
             Usuario usuario=new Usuario(rut, nombre, apellidoPaterno, apellidoMaterno, tipoUsuario, cargo, username, password, estado);
             
@@ -105,13 +82,14 @@ public class Controlador extends HttpServlet {
                 response.sendRedirect("MensajeOk.jsp?mensaje=Usuario agregado<br>Su username es: &username="+username);
 
                   
-            }else{
-                 //error
+            }
+            else
+            {
                 response.sendRedirect("MensajeError.jsp?mensaje=Rut ya existente&retorno=");
             }
         }    
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+        try (PrintWriter out = response.getWriter()) 
+        {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");

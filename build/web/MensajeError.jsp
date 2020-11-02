@@ -1,9 +1,3 @@
-<%-- 
-    Document   : MensajeError
-    Created on : 26/10/2020, 08:12:03 PM
-    Author     : Carlo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

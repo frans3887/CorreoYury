@@ -1,9 +1,3 @@
-<%-- 
-    Document   : CRUD_Usuario
-    Created on : 02/11/2020, 11:01:34 AM
-    Author     : Carlo
---%>
-
 <%@page import="modelo.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
