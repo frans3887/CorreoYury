@@ -69,7 +69,8 @@ public class Controlador extends HttpServlet
                     break;
             }
             username = UsuarioDAO.revisionUsuario(nombre, apellidoPaterno);
-                
+            
+            
             Usuario usuario=new Usuario(rut, nombre, apellidoPaterno, apellidoMaterno, tipoUsuario, cargo, username, password, estado);
             
             if(UsuarioDAO.agregar(usuario) == true)
