@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 02, 2020 at 11:31 PM
+-- Generation Time: Nov 05, 2020 at 06:57 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -25,6 +25,19 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `carga`
+--
+
+CREATE TABLE `carga` (
+  `rutApoderado` varchar(20) COLLATE utf8_bin NOT NULL,
+  `nombre` varchar(20) COLLATE utf8_bin NOT NULL,
+  `apellidoPaterno` varchar(20) COLLATE utf8_bin NOT NULL,
+  `apellidoMaterno` varchar(20) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `usuario`
 --
 
@@ -37,20 +50,23 @@ CREATE TABLE `usuario` (
   `cargo` varchar(20) COLLATE utf8_general_mysql500_ci NOT NULL,
   `username` varchar(15) COLLATE utf8_general_mysql500_ci NOT NULL,
   `password` varchar(30) COLLATE utf8_general_mysql500_ci NOT NULL,
-  `estado` int(11) NOT NULL
+  `estado` int(11) NOT NULL,
+  `numeroCargas` int(11) NOT NULL,
+  `contactoEmergencia` varchar(20) COLLATE utf8_general_mysql500_ci NOT NULL,
+  `ultimoTrabajo` varchar(20) COLLATE utf8_general_mysql500_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_mysql500_ci;
 
 --
 -- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`rut`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `tipoUsuario`, `cargo`, `username`, `password`, `estado`) VALUES
-('1111111-1', 'Rebecca', 'Vasquez', 'Nunez', 1, '', 'rvasquez0', '123456', 0),
-('2222222-2', 'Raúl', 'Mendoza', 'Martínez', 2, '', 'rmendoza0', '123456', 0),
-('33333333-3', 'Roman', 'Benitez', 'Ramirez', 2, 'Recursos Humanos', 'rbenitez0', '123456', 0),
-('44444444-4', 'Valentina', 'Ramirez', 'Gonzalez', 3, 'Cargo tipo 1', 'vramirez0', '123456', 0),
-('5555555-5', 'Valentina', 'Perez', 'Rosales', 3, 'Cargo tipo 2', 'vperez0', '123456', 0),
-('2666666-4', 'Juan', 'Perez', 'Ramirez', 1, 'Administrador', 'jperez0', '123456', 0);
+INSERT INTO `usuario` (`rut`, `nombre`, `apellidoPaterno`, `apellidoMaterno`, `tipoUsuario`, `cargo`, `username`, `password`, `estado`, `numeroCargas`, `contactoEmergencia`, `ultimoTrabajo`) VALUES
+('1111111-1', 'Rebecca', 'Vasquez', 'Nunez', 1, '', 'rvasquez0', '123456', 0, 0, '', ''),
+('2222222-2', 'Raúl', 'Mendoza', 'Martínez', 2, '', 'rmendoza0', '123456', 0, 0, '', ''),
+('33333333-3', 'Roman', 'Benitez', 'Ramirez', 2, 'Recursos Humanos', 'rbenitez0', '123456', 0, 0, '', ''),
+('44444444-4', 'Valentina', 'Ramirez', 'Gonzalez', 2, 'Cargo tipo 1', 'vramirez0', '123456', 0, 0, '', ''),
+('5555555-5', 'Valentina', 'Perez', 'Rosales', 2, 'Cargo tipo 2', 'vperez0', '123456', 0, 0, '', ''),
+('2666666-4', 'Juan', 'Perez', 'Ramirez', 1, 'Administrador', 'jperez0', '123456', 0, 0, '', '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

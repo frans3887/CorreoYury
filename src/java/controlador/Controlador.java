@@ -38,16 +38,12 @@ public class Controlador extends HttpServlet
             password=request.getParameter("password");
             switch (request.getParameter("tipoUsuario")) 
             {
-                case "administrador":
-                    tipoUsuario=1;
-                    cargo="Administrador";
-                    break;
                 case "rrhh":
-                    tipoUsuario=2;
+                    tipoUsuario=1;
                     cargo="Recursos Humanos";
                     break;
                 case "trabajador":
-                    tipoUsuario=3;
+                    tipoUsuario=2;
                     switch (request.getParameter("cargo")) 
                     {
                         case "cargo1":
@@ -88,6 +84,7 @@ public class Controlador extends HttpServlet
                 response.sendRedirect("MensajeError.jsp?mensaje=Rut ya existente&retorno=");
             }
         }    
+        
         try (PrintWriter out = response.getWriter()) 
         {
             out.println("<!DOCTYPE html>");

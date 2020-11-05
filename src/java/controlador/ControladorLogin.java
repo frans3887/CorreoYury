@@ -45,16 +45,14 @@ public class ControladorLogin extends HttpServlet
             //Qué tipo de usuario es?            
             sesion.setAttribute("usuario", user);
             sesion.setAttribute("estadoSesion", "on");    
+            sesion.setAttribute("username", usuario);    
             
             switch(user.getTipoUsuario())
             {
                 case 1:
-                    response.sendRedirect("menuAdmin.jsp");
-                    break;
-                case 2:
                     response.sendRedirect("menuRRHH.jsp");
                     break;
-                case 3:
+                case 2:
                     response.sendRedirect("menuTrabajador.jsp");
                     break;
                 default:

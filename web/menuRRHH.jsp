@@ -29,11 +29,8 @@
                     switch(user.getTipoUsuario())
                     {
                         case 1:
-                            response.sendRedirect("MensajeError.jsp?mensaje=Error, usted no es miembro de RRHH&retorno=menuAdmin.jsp");
                             break;
                         case 2:
-                            break;
-                        case 3:
                             response.sendRedirect("MensajeError.jsp?mensaje=Error, no es miembro de RRHH&retorno=menuTrabajador.jsp");
                             break;
                         default:

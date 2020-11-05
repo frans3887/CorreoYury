@@ -26,11 +26,8 @@
                     switch(user.getTipoUsuario())
                     {
                         case 1:
-                            response.sendRedirect("MensajeError.jsp?mensaje=Error, usted no es trabajador&retorno=menuAdmin.jsp");
                             break;
                         case 2:
-                            break;
-                        case 3:
                             break;
                         default:
                             response.sendRedirect("CerrarSesion.jsp");
@@ -39,6 +36,8 @@
                 }
          %>
         <h1>MENÚ TRABAJADOR!</h1>
-            <li><a href="CerrarSesion.jsp">Salir</a></li>
+        <li><a href="Modificar.jsp">Editar Información</a></li>
+        <li><a href="Datos_Trabajador.jsp">Ver Información</a></li>
+        <li><a href="CerrarSesion.jsp">Salir</a></li>
     </body>
 </html>

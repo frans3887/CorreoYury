@@ -142,4 +142,25 @@ public class UsuarioDAO
         estado = true;
         return estado;
     }
+    
+    public static Usuario buscar(String usuario) throws SQLException
+    {
+        Usuario doc = new Usuario();
+        conectar();    
+        ResultSet result = state.executeQuery("SELECT * FROM usuario WHERE username='"+usuario+"';");
+        while(result.next())
+        {
+            doc.setRut((String)result.getObject(1));
+            doc.setNombre((String)result.getObject(2));
+            doc.setApellidoPaterno((String)result.getObject(3));
+            doc.setApellidoMaterno((String)result.getObject(4));
+            doc.setTipoUsuario((int)result.getObject(5));
+            doc.setCargo((String)result.getObject(6));
+            doc.setUsername((String)result.getObject(7));
+            doc.setPassword((String)result.getObject(8));
+            doc.setEstado((int)result.getObject(9));
+        }
+        connect.close();
+        return doc;
+    }
 }

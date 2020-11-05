@@ -24,19 +24,16 @@
                 //Usuario válido
                 // ¿tiene nivel de acceso?
                 switch(user.getTipoUsuario())
-                {
-                    case 1:
-                        response.sendRedirect("MensajeError.jsp?mensaje=Error, usted no es miembro de RRHH&retorno=menuAdmin.jsp");
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        response.sendRedirect("MensajeError.jsp?mensaje=Error, no es miembro de RRHH&retorno=menuTrabajador.jsp");
-                        break;
-                    default:
-                        response.sendRedirect("CerrarSesion.jsp");
-                        break;
-                }
+                    {
+                        case 1:
+                            break;
+                        case 2:
+                            response.sendRedirect("MensajeError.jsp?mensaje=Error, no es miembro de RRHH&retorno=menuTrabajador.jsp");
+                            break;
+                        default:
+                            response.sendRedirect("CerrarSesion.jsp");
+                            break;
+                    }
             }
             %>
     <center>
@@ -55,6 +52,7 @@
                     <label for="tipoUsuario">Tipo de Usuario</label>
                     <select name="tipoUsuario">
                         <option disabled selected hidden>-seleccionar-</option>
+                        <option value="rrhh">Recursos Humanos</option>
                         <option value="trabajador">Trabajador</option>
                     </select><br><br>
                     <label for="cargo">Cargo</label>
